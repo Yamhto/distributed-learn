@@ -4,6 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.5.RELEASE</version>
+    </parent>
+
     <groupId>com.yamhto</groupId>
     <artifactId>distributed-dependency</artifactId>
     <packaging>pom</packaging>
@@ -11,7 +17,42 @@
     <modules>
         <module>../distributed-transaction</module>
         <module>../distributed-lock</module>
+        <module>../sub-library-table</module>
     </modules>
+
+    <properties>
+        <mysql-conn.verion>8.0.20</mysql-conn.verion>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!--mysql-conn-J-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-conn.verion}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 
 </project>
