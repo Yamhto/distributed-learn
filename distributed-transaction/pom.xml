@@ -26,7 +26,8 @@
     </build>
     <modules>
         <module>jdbc-transaction</module>
-        <module>spring-transaction</module>
+        <module>spring-jpa-transaction</module>
+        <module>spring-jta-transaction</module>
     </modules>
 
     <dependencies>
