@@ -28,6 +28,7 @@
         <module>jdbc-transaction</module>
         <module>spring-jpa-transaction</module>
         <module>spring-jta-transaction</module>
+        <module>spring-jms-transaction</module>
     </modules>
 
     <dependencies>

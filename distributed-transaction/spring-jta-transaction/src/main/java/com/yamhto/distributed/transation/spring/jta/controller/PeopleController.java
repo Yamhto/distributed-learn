@@ -45,6 +45,8 @@ public class PeopleController {
             p.setHigher("100");
             peopleService.saveOne(p);
 
+            int temp = 5 / 0;
+
             Order order = new Order();
             order.setOrdername("jta" + new Random().nextInt(1000));
             order.setNum("3");
